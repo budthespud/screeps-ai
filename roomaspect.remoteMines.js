@@ -184,7 +184,7 @@ module.exports = class RemoteMinesAspect {
 
     possibleRemoteMines(roomNames) {
         roomNames = _.filter(roomNames, (r) => r !== this.room.name && !this.remoteMines.includes(r) && isAcceptableMine(r));
-        console.log(roomNames);
+        //console.log(roomNames);
         return _.sortBy(roomNames, (r) => -MapKnowledge.roomKnowledge(r).sources);
     }
 
