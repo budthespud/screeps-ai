@@ -10,7 +10,10 @@ const mineralColors = {
 
 module.exports = class MapKnowledge {
     static updateKnowledge() {
-        console.log(Memory.mapKnowledge);
+        if (typeof Memory.mapKnowledge.blacklist !== 'undefined') {
+            Memory.mapKnowledge.blacklist = {};
+            console.log("Blacklist Initialized");
+        }
         if(!this.memory) Memory.mapKnowledge = {};
 
         for(let room of Object.values(Game.rooms)) {
