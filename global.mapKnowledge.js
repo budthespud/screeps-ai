@@ -11,7 +11,7 @@ const mineralColors = {
 module.exports = class MapKnowledge {
     static updateKnowledge() {
         if(!this.memory) Memory.mapKnowledge = {};
-        if(!this.blacklist) memory.blacklist = {};
+        if(!this.blacklist) this.memory[blacklist] = {};
 
         for(let room of Object.values(Game.rooms)) {
             let knowledge = this.roomKnowledge(room.name);
