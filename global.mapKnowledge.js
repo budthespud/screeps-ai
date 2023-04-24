@@ -40,7 +40,8 @@ module.exports = class MapKnowledge {
     }
     
     static get blacklist() {
-        return this.memory[blacklist];
+        return this.memory['blacklist'];
+        console.log('fetching blacklist');
     }
 
     static initializeRoomKnowledge(knowledge, room) {
