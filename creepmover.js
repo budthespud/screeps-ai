@@ -98,6 +98,8 @@ module.exports = class CreepMover {
                 let result = PathFinder.search(this.creep.pos, target, options);
                 if(result.incomplete) {
                     this.log("Could not find complete path from " + this.creep.pos + " to " +  target.pos + ".");
+                    console.log(target.pos);
+                    console.log(target.room);
                     Memory.blacklist[target] = true;
                     //console.log(target + 'added to room blacklist');
                 }
