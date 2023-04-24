@@ -98,9 +98,7 @@ module.exports = class CreepMover {
                 let result = PathFinder.search(this.creep.pos, target, options);
                 if(result.incomplete) {
                     this.log("Could not find complete path from " + this.creep.pos + " to " +  target.pos + ".");
-                    console.log(target.pos);
-                    console.log(target.pos.roomName);
-                    Memory.blacklist[target] = true;
+                    Memory.blacklist[target.pos.roomName] = true;
                     //console.log(target + 'added to room blacklist');
                 }
                 data.path = CreepMover.serializePath(this.creep.pos, result.path);
