@@ -10,11 +10,8 @@ const mineralColors = {
 
 module.exports = class MapKnowledge {
     static updateKnowledge() {
-        if (typeof Memory.mapKnowledge[blacklist] !== 'undefined') {
-            Memory.mapKnowledge.blacklist = {};
-            console.log("Blacklist Initialized");
-        }
         if(!this.memory) Memory.mapKnowledge = {};
+        if(!this.blacklist) Memory.mapKnowledge.blacklist = {};
 
         for(let room of Object.values(Game.rooms)) {
             let knowledge = this.roomKnowledge(room.name);
@@ -40,6 +37,10 @@ module.exports = class MapKnowledge {
 
     static get memory() {
         return Memory.mapKnowledge;
+    }
+    
+    static get blacklist() {
+        return Memory.mapKnowledge.blacklist;
     }
 
     static initializeRoomKnowledge(knowledge, room) {
