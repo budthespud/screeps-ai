@@ -50,7 +50,7 @@ module.exports = class RemoteMinesAspect {
 
         // TODO: only disable endangered remote mines
         if(this.roomai.defense.defcon >= 3) return;
-        console.log(this.room);
+
 
         let hasExcessEnergy = this.roomai.trading.requiredExportFromRoom(RESOURCE_ENERGY, { showExcess: true }) >= energyExcessThreshold;
 
@@ -184,6 +184,7 @@ module.exports = class RemoteMinesAspect {
 
     possibleRemoteMines(roomNames) {
         roomNames = _.filter(roomNames, (r) => r !== this.room.name && !this.remoteMines.includes(r) && isAcceptableMine(r));
+        console.log(roomNames);
         return _.sortBy(roomNames, (r) => -MapKnowledge.roomKnowledge(r).sources);
     }
 
