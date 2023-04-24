@@ -10,7 +10,7 @@ const mineralColors = {
 
 module.exports = class MapKnowledge {
     static updateKnowledge() {
-        if (typeof Memory.mapKnowledge.blacklist !== 'undefined') {
+        if (typeof Memory.mapKnowledge[blacklist] !== 'undefined') {
             Memory.mapKnowledge.blacklist = {};
             console.log("Blacklist Initialized");
         }
