@@ -99,6 +99,7 @@ module.exports = class CreepMover {
                 if(result.incomplete) {
                     this.log("Could not find complete path from " + this.creep.pos + " to " +  target.pos + ".");
                     Memory.blacklist.push(target);
+                    console.log(target + 'added to room blacklist');
                 }
                 data.path = CreepMover.serializePath(this.creep.pos, result.path);
             }
